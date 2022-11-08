@@ -3806,6 +3806,42 @@ def alltrue(*args, **kwargs):
     """
     Check if all elements of input array are true.
 
+    Parameters
+    ----------
+    a : array_like
+        Input array or object that can be converted to an array.
+
+    axis : None or int or tuple of ints, optional
+        Axis or axes along which a logical AND reduction is performed.
+        The default (``axis=None``) is to perform a logical AND over all
+        the dimensions of the input array. `axis` may be negative, in
+        which case it counts from the last to the first axis.
+
+        If this is a tuple of ints, a reduction is performed on multiple
+        axes, instead of a single axis or all the axes as before.
+    
+    out : ndarray, optional
+        Alternate output array in which to place the result.
+        It must have the same shape as the expected output and its
+        type is preserved (e.g., if ``dtype(out)`` is float, the result
+        will consist of 0.0's and 1.0's). See :ref:`ufuncs-output-type` for more
+        details.
+
+    Returns
+    -------
+    all : ndarray, bool
+        A new boolean or array is returned unless `out` is specified,
+        in which case a reference to `out` is returned.
+
+    Examples
+    --------
+    >>> x = np.array([False, False, True])
+    >>> y = np.array([True, True, True])
+    >>> np.alltrue(x)
+    False
+    >>> np.alltrue(y)
+    True
+
     See Also
     --------
     numpy.all : Equivalent function; see for details.
